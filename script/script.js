@@ -7,7 +7,7 @@ const getPassword = document.getElementById("user-password");
 function userLogin(){
     const userEmail = getEmail.value;
     const userPassword = getPassword.value;
-    const url = "bank.html";
+    const url = "/bank.html";
 
     console.log(userEmail);
     console.log(userPassword);
