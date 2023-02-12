@@ -31,7 +31,7 @@ function userLogin() {
     console.log(userPassword);
     if (userEmail === "user@email.com" && userPassword === "userpassword") {
         console.log("Valid email and password");
-        window.location.href = "../bank.html"
+        window.location.href = "bank.html"
     }
     else {
         console.log("Invalid email and password");
