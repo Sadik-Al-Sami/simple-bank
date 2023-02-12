@@ -2,18 +2,36 @@
 const logInButton = document.getElementById("btn-submit");
 const getEmail = document.getElementById("user-email");
 const getPassword = document.getElementById("user-password");
+let emailErrMsg = document.getElementById('emailMsg');
+let passwordErrMsg = document.getElementById('pswMsg');
 
 // * Login Function Created
-function userLogin(){
+function userLogin() {
     const userEmail = getEmail.value;
     const userPassword = getPassword.value;
-    const url = "/bank.html";
+
+    if (userEmail == '') {
+        emailErrMsg.innerText = 'Please Fill The Email*';
+    }
+    else if (!isNaN(userEmail)) {
+        emailErrMsg.innerText = 'Only Characters are allowed*';
+    }
+    else {
+        emailErrMsg.innerText = '';
+    }
+
+    if (userPassword === '') {
+        passwordErrMsg.innerText = 'Enter the password please!*';
+    } 
+    else {
+        passwordErrMsg.innerText = '';
+    }
 
     console.log(userEmail);
     console.log(userPassword);
-    if (userEmail === "user@email.com" && userPassword === "userpassword"){
+    if (userEmail === "user@email.com" && userPassword === "userpassword") {
         console.log("Valid email and password");
-        window.location.assign(url);
+        window.location.href = "/bank.html"
     }
     else {
         console.log("Invalid email and password");
@@ -21,7 +39,7 @@ function userLogin(){
     }
 }
 
-// ! if the login button exists then we keep the code for execution
-if (logInButton){
+
+if (logInButton) {
     logInButton.addEventListener('click', userLogin);
 }
